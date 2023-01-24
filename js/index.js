@@ -180,17 +180,16 @@ const createReadMe = util.promisify(writeToFile);
 // create async function with catch for errors
 async function init() {
     try {
-    // waits for the user to go through the entire question array
+    // waits for the user to go through the entire question array before moving on with the function
     const userAnswers = await inquirer.prompt(questions);
-    console.log(
-      "The current data is being processed into your README.md: ", userAnswers);
+    console.log("The current data is being processed into your README.md: ", userAnswers);
     // get markdown template from generateMarkdown.js passing the answers as parameter
     const markdown = generateMarkdown(userAnswers);
     console.log(markdown);
     //write the readme file after the markdown is made
     await createReadMe("README0.md", markdown);
   } catch (error) {
-    console.log("Sorry there was an error." + error);
+    console.log("There was an error." + error);
   }
 }
 

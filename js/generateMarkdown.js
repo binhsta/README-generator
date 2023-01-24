@@ -41,37 +41,37 @@ function generateMarkdown(data) {
       
   // Title and Description
       
-  `# ${data.title}
+`# ${data.title}
   
-  ## Description
+## Description
   
   ${data.description}
   
-  ![badge](https://img.shields.io/badge/license-${userLicense}-blue)`;
+![badge](https://img.shields.io/badge/license-${userLicense}-blue)`;
     // Create optional sections in a table of contents after the required sections such as title, description
   
   let tableOfContents =
-  `
-  ## Table of Contents`;
+`
+## Table of Contents`;
     if (data.installation) {
       tableOfContents +=
-        `
-    * [Installation](#installation)`
+`
+  * [Installation](#installation)`
     };
     if (data.instructions) {
       tableOfContents +=
-        `
-    * [Instructions](#instructions)`
+`
+  * [Instructions](#instructions)`
     };
     if (data.contribution) {
       tableOfContents +=
-        `
-    * [Contribution](#contribution)`
+`
+  * [Contribution](#contribution)`
     };
     if (data.testing) {
       tableOfContents +=
-        `
-    * [Testing](#testing)`
+`
+  * [Testing](#testing)`
     };
   
     // Append table of contents to template
@@ -79,34 +79,36 @@ function generateMarkdown(data) {
   
     // Add contact info and license
     markdownTemplate +=
-      `
-    * [Questions](#questions)`;
+`
+  * [Questions](#questions)`;
       
     markdownTemplate +=
-      `
-    * [License](#license)
+`
+  * [License](#license)
       
-      `;
+`;
   
     // Optional sections 
   
     // Installation
     if (data.installation) {
       markdownTemplate +=
-        `
+`
   ## Installation
       
-    *Follow these steps to properly install this application:*
+  *Follow these steps to properly install this application:*
     ${data.installation}`
     };
   
     // Usage instructions
     if (data.instructions) {
       markdownTemplate +=
-        `
+`
         
   ## Usage
-    *Instructions for use:*
+
+  *Instructions for use:*
+
     ${data.instructions}`
     };
   
@@ -116,43 +118,49 @@ function generateMarkdown(data) {
         `
         
   ## Contribution
-    *If you would like to contribute, please adhere to these guidelines:*
+
+  *If you would like to contribute, please adhere to these guidelines:*
+
     ${data.contribution}`
     };
   
     // Testing
     if (data.testing) {
       markdownTemplate +=
-        `
+`
         
   ## Testing
-    *Instructions for testing application:*
+
+  *Instructions for testing application:*
+
     ${data.testing}`
     };
   
     // Questions
       markdownTemplate +=
-        `
+`
         
   ## Questions
         
-    *For further questions:*
+  *For further questions:*
+
     ${data.questions}
     
-    *Contact Info:*
-    GitHub: [${data.username}](https://github.com/${data.username})
-    Email: [${data.email}](mailto:${data.email})`;
+  *Contact Info:*
+    
+  GitHub: [${data.username}](https://github.com/${data.username})
+  Email: [${data.email}](mailto:${data.email})`;
     
     markdownTemplate +=
-      `
+`
       
   ## License
         
-    *This application has the ${data.license}.*
+  *This application has the ${data.license}.*
         
-    For more information please view the [license description](${licenseLink}).
+  For more information please view the [license description](${licenseLink}).
     
-    `;
+`;
     return markdownTemplate;
   }
   
