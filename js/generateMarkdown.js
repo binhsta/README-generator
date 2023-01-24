@@ -47,11 +47,12 @@ function generateMarkdown(data) {
   
   ${data.description}
   
-  ![badge](https://img.shields.io/badge/license-${userLicense}-brightorange)`;
+  ![badge](https://img.shields.io/badge/license-${userLicense}-blue)`;
     // Create optional sections in a table of contents after the required sections such as title, description
   
   let tableOfContents =
-  `## Table of Contents`;
+  `
+  ## Table of Contents`;
     if (data.installation) {
       tableOfContents +=
         `
